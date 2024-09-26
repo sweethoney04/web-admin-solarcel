@@ -76,7 +76,7 @@ export default function () {
             <button
               style={{ backgroundColor: "#154391", color: "white", borderRadius: 10 }}
               type="button"
-              class="inline-flex w-full justify-center gap-x-1.5 px-3 py-3 text-sm font-semibold shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+              class="inline-flex w-full justify-center gap-x-1.5 px-3 py-3 text-sm font-semibold shadow-sm hover:bg-gray-50"
               id="menu-button"
               aria-expanded="true"
               aria-haspopup="true"
@@ -99,7 +99,7 @@ export default function () {
           {isOpen && (
             <div
               style={{ backgroundColor: "rgba(39, 79, 148, 0.8)", color: "white" }}
-              class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md shadow-lg ring-1 ring-black text-white ring-opacity-5 focus:outline-none"
+              class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md shadow-lg text-white focus:outline-none"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="menu-button"
