@@ -32,7 +32,7 @@ export default function Login() {
         }}
       >
         <div style={{ textAlign: "center", marginBottom: 30 }}>
-          <h2>Log in</h2>
+          <h2 style={{fontSize: 50}}>Log in</h2>
         </div>
 
         <div style={{ width: "50%", minWidth: 300 }}>

@@ -151,7 +151,7 @@ export default function SideBar({ children }) {
                 </Link>
               </div>
               <div className="ml-3">
-                <Link to="/logout">
+                <Link to="/login">
                   <h5>Log out</h5>
                 </Link>
               </div>

@@ -71,44 +71,60 @@ export default function () {
         style={{ fontFamily: "Noto Sans Lao" }}
       >
         <h4 style={{ fontSize: 24 }}>ການຈັດການປະເພດຂໍ້ມູນ</h4>
-        <div
-          className="relative"
-          id="dropdownButton"
-          style={{ fontFamily: "Noto San Laos", marginLeft: 580 }}
-        >
-          <div
-            onClick={toggleDropdown}
-            className="border-solid border-gray-300 border-[1px] px-5 py-2 rounded cursor-pointer flex justify-between w-[200px]  shadow-md"
-            style={{
-              backgroundColor: "#154391",
-              padding: "10px 20px",
-              borderRadius: 10,
-              color: "white",
-              textAlign: "center",
-              fontFamily: "Noto San Laos",
-            }}
-          >
-            ປະເພດໂຊລາເຊວ
-            <img
-              width={20}
-              src={require("../assets/img/teenyicons_up-outline.png")}
-              alt="Toggle dropdown"
-            />
+        <div class="relative inline-block text-left">
+          <div onClick={toggleDropdown} style={{ marginLeft: 650 }}>
+            <button
+              style={{ backgroundColor: "#154391", color: "white", borderRadius: 10 }}
+              type="button"
+              class="inline-flex w-full justify-center gap-x-1.5 px-3 py-3 text-sm font-semibold shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+              id="menu-button"
+              aria-expanded="true"
+              aria-haspopup="true"
+            >
+              ປະເພດໂຊລາເຊວ
+              <svg
+                class="-mr-1 h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
           </div>
           {isOpen && (
             <div
-              id="dropdown"
-              className="rounded border-[1px] border-gray-300 p-4 absolute top-[45px] w-[200px] shadow-md"
-              style={{
-                backgroundColor: "#274F94",
-                padding: "10px 20px",
-                borderRadius: 10,
-                color: "white",
-                textAlign: "center",
-              }}
+              style={{ backgroundColor: "rgba(39, 79, 148, 0.8)", color: "white" }}
+              class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md shadow-lg ring-1 ring-black text-white ring-opacity-5 focus:outline-none"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
             >
-              <div className="cursor-pointer hover:bg-blue-300 z-50">ແບບປ້ຳ</div>
-              <div className="cursor-pointer hover:bg-blue-300 z-50">Rooftop</div>
+              <div class="py-1" role="none">
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm "
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-1"
+                >
+                  ແບບປ້ຳ
+                </a>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm "
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-2"
+                >
+                  Looftop
+                </a>
+              </div>
             </div>
           )}
         </div>

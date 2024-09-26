@@ -17,6 +17,7 @@ import Login from "./pages/Login";
 import AddProduct from "./pages/AddProduct";
 import FormData from "./pages/FormData";
 import AddUser from "./pages/AddUser";
+import AddPor from "./pages/AddPor";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="add-product" element={<AddProduct />} />
           <Route path="form-data" element={<FormData />} />
           <Route path="add-user" element={<AddUser />} />
+          <Route path="add-por" element={<AddPor />} />
         </Route>
         <Route path="login" element={<Login />} />
       </Routes>

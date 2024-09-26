@@ -68,7 +68,7 @@ export default function Product () {
 
 
                 </div>
-                <Link to="/">
+                <Link to="/add-por">
     <button style={{
                   backgroundColor: "#154391",
                   padding: "10px 20px",
