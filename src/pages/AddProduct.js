@@ -179,32 +179,25 @@ export default function AddProduct(props) {
             </Link>
           </button>
 
+          <Link to="/manage-product">
           <button
-          onClick={transferValue}
             style={{
               backgroundColor: "#154391",
               borderRadius: 10,
               padding: "10px 18px",
               color: "white",
             }}
-            // onClick={() =>
-            //   Swal.fire({
-            //     title: "Are you sure?",
-            //     text: "You won't be able to revert this!",
-            //     icon: "warning",
-            //     showCancelButton: true,
-            //     confirmButtonColor: "#3085d6",
-            //     cancelButtonColor: "#d33",
-            //     confirmButtonText: "Yes, delete it!",
-            //   }).then((result) => {
-            //     if (result.isConfirmed) {
-            //       Swal.fire("Deleted!", "Your file has been deleted.", "success");
-            //     }
-            //   })
-            // }
+            onClick={() =>
+              Swal.fire({
+                title: "ທ່ານໄດ້ເພີ່ມຂໍ້ມູນສຳເລັດແລ້ວ",
+                icon: "success",
+
+              })
+            }
           >
             ບັນທຶກ
           </button>
+          </Link>
         </div>
       </div>
     </div>

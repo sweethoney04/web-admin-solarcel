@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function AddPor() {
     const [isOpen, setIsOpen] = useState(false);
@@ -119,19 +120,25 @@ export default function AddPor() {
             </button>
           </div>
           <div>
-            <button
-              style={{
-                backgroundColor: "#154391",
-                borderRadius: 10,
-                padding: "10px 18px",
-                color: "white",
-                textAlign: "center",
-              }}
-            >
-              <Link to="/product">
-                <h4>ບັນທຶກ</h4>
-              </Link>
-            </button>
+          <Link to="/product">
+          <button
+            style={{
+              backgroundColor: "#154391",
+              borderRadius: 10,
+              padding: "10px 18px",
+              color: "white",
+            }}
+            onClick={() =>
+              Swal.fire({
+                title: "ທ່ານໄດ້ເພີ່ມຂໍ້ມູນສຳເລັດແລ້ວ",
+                icon: "success",
+
+              })
+            }
+          >
+            ບັນທຶກ
+          </button>
+          </Link>
           </div>
         </div>
       </div>

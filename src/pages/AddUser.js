@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function AddUser() {
   const inputRef = useRef(null);
@@ -269,19 +270,25 @@ export default function AddUser() {
             </button>
           </div>
           <div>
-            <button
-              style={{
-                backgroundColor: "#154391",
-                borderRadius: 10,
-                padding: "10px 18px",
-                color: "white",
-                textAlign: "center",
-              }}
-            >
-              <Link to="/manage-user">
-                <h4>ບັນທຶກ</h4>
-              </Link>
-            </button>
+          <Link to="/manage-user">
+          <button
+            style={{
+              backgroundColor: "#154391",
+              borderRadius: 10,
+              padding: "10px 18px",
+              color: "white",
+            }}
+            onClick={() =>
+              Swal.fire({
+                title: "ທ່ານໄດ້ເພີ່ມຂໍ້ມູນສຳເລັດແລ້ວ",
+                icon: "success",
+
+              })
+            }
+          >
+            ບັນທຶກ
+          </button>
+          </Link>
           </div>
         </div>
       </div>
