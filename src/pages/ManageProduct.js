@@ -1,9 +1,30 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import DataTable from "react-data-table-component";
+import one from '../assets/img/ic_baseline-delete.png';
+import { FaRegEdit } from "react-icons/fa";
+import { BiSolidEditAlt } from "react-icons/bi";
+import { MdDelete } from "react-icons/md";
+import Swal from "sweetalert2";
 
 export default function () {
+  const handleConfirmClick = () => {
+    Swal.fire({
+      title: "  ຢືນຢັນການລົບຂໍ້ມູນ",
+      showCancelButton: true,
+      cancelButtonColor: "#007AFF",
+      confirmButtonColor: "#EA2A2D",
+      cancelButtonText: "ຍົກເລີກ",
+      confirmButtonText: "ລົບ",
+    })
+  };
   const [isOpen, setIsOpen] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+
+  // Toggle editing mode
+  const toggleEdit = () => {
+    setIsEditing(!isEditing);
+  };
 
   const toggleDropdown = () => {
     setIsOpen((prev) => !prev);
@@ -45,6 +66,18 @@ export default function () {
       name: "ຈຳນວນແຜງ",
       selector: (row) => row.quantity,
     },
+    {
+      name: "ເພີ່ມຂໍ້ມູນ",
+      selector: (row) => row.add
+    },
+    {
+      name: "ແກ້ໄຂ",
+      selector: (row) => row.edit
+    },
+    {
+      name: "ລຶບ",
+      selector: (row) => row.change
+    }
   ];
   const data = [
     {
@@ -54,6 +87,27 @@ export default function () {
       name: "ຊຸດປ້ຳ210w",
       price: "1,000,000",
       quantity: "2ແຜງ",
+      add: (
+        <Link to="/add-product">
+        <button>
+        <FaRegEdit
+          icon={FaRegEdit}
+          style={{ fontSize: 25, marginLeft: 10, color: "green" }}
+        />
+      </button>
+      </Link>
+      ),
+      edit: 
+      <Link to="/add-product">
+        <button>
+        <BiSolidEditAlt style={{ fontSize: 25, color: "darkblue" }} />
+      </button>
+      </Link>,
+      change: 
+        <button onClick={handleConfirmClick}>
+        <MdDelete style={{ fontSize: 25, color: "red" }} />
+      </button>,
+
     },
     {
       sort: 1,
@@ -62,19 +116,43 @@ export default function () {
       name: "ຊຸດປ້ຳ210w",
       price: "1,000,000",
       quantity: "2ແຜງ",
+      add: (
+        <Link to="/add-product">
+        <button>
+        <FaRegEdit
+          icon={FaRegEdit}
+          style={{ fontSize: 25, marginLeft: 10, color: "green" }}
+        />
+      </button>
+      </Link>
+      ),
+      edit: 
+      <Link to="/add-product">
+        <button>
+        <BiSolidEditAlt style={{ fontSize: 25, color: "darkblue" }} />
+      </button>
+      </Link>,
+      change: 
+        <button onClick={handleConfirmClick}>
+        <MdDelete style={{ fontSize: 25, color: "red" }} />
+      </button>,
     },
   ];
   return (
     <>
       <div
         className="flex w-full justify-between ml-3 mr-3 mt-5"
-        style={{ fontFamily: "Noto Sans Lao", color: '#154391' }}
+        style={{ fontFamily: "Noto Sans Lao", color: "#154391" }}
       >
         <h4 style={{ fontSize: 24 }}>ການຈັດການຂໍ້ມູນ</h4>
         <div class="relative inline-block text-left">
           <div onClick={toggleDropdown} style={{ marginLeft: 650 }}>
             <button
-              style={{ backgroundColor: "#154391", color: "white", borderRadius: 10 }}
+              style={{
+                backgroundColor: "#154391",
+                color: "white",
+                borderRadius: 10,
+              }}
               type="button"
               class="inline-flex w-full justify-center gap-x-1.5 px-3 py-3 text-sm font-semibold shadow-sm hover:bg-gray-50"
               id="menu-button"
@@ -98,7 +176,10 @@ export default function () {
           </div>
           {isOpen && (
             <div
-              style={{ backgroundColor: "rgba(39, 79, 148, 0.8)", color: "white" }}
+              style={{
+                backgroundColor: "rgba(39, 79, 148, 0.8)",
+                color: "white",
+              }}
               class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md shadow-lg text-white focus:outline-none"
               role="menu"
               aria-orientation="vertical"

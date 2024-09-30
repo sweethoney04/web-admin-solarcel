@@ -2,8 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import DataTable from 'react-data-table-component';
 import Sort from '../assets/img/streamline_layers-1-solid.png'
+import { FaRegEdit } from "react-icons/fa";
+import { BiSolidEditAlt } from "react-icons/bi";
+import { MdDelete } from "react-icons/md";
+import Swal from "sweetalert2";
 
 export default function ManageUser() {
+  const handleConfirmClick = () => {
+    Swal.fire({
+      title: "  ຢືນຢັນການລົບຂໍ້ມູນ",
+      showCancelButton: true,
+      cancelButtonColor: "#007AFF",
+      confirmButtonColor: "#EA2A2D",
+      cancelButtonText: "ຍົກເລີກ",
+      confirmButtonText: "ລົບ",
+    })
+  };
   const tableCustomStyles = {
     headRow: {
       style: {
@@ -42,6 +56,18 @@ export default function ManageUser() {
       name: 'ຈຳນວນແຜງ',
       selector: row => row.quantity
     },
+    {
+      name: "ເພີ່ມຂໍ້ມູນ",
+      selector: (row) => row.add
+    },
+    {
+      name: "ແກ້ໄຂ",
+      selector: (row) => row.edit
+    },
+    {
+      name: "ລຶບ",
+      selector: (row) => row.change
+    }
   ]
   const data = [
     {
@@ -51,6 +77,26 @@ export default function ManageUser() {
       name: 'ຊຸດປ້ຳ210w',
       price: '1,000,000',
       quantity: '2ແຜງ',
+      add: (
+        <Link to="/add-user">
+        <button>
+        <FaRegEdit
+          icon={FaRegEdit}
+          style={{ fontSize: 25, marginLeft: 10, color: "green" }}
+        />
+      </button>
+      </Link>
+      ),
+      edit: 
+      <Link to="/add-user">
+        <button>
+        <BiSolidEditAlt style={{ fontSize: 25, color: "darkblue" }} />
+      </button>
+      </Link>,
+      change: 
+        <button onClick={handleConfirmClick}>
+        <MdDelete style={{ fontSize: 25, color: "red" }} />
+      </button>,
     },
     {
       sort: 1,
@@ -59,6 +105,26 @@ export default function ManageUser() {
       name: 'ຊຸດປ້ຳ210w',
       price: '1,000,000',
       quantity: '2ແຜງ',
+      add: (
+        <Link to="/add-user">
+        <button>
+        <FaRegEdit
+          icon={FaRegEdit}
+          style={{ fontSize: 25, marginLeft: 10, color: "green" }}
+        />
+      </button>
+      </Link>
+      ),
+      edit: 
+      <Link to="/add-user">
+        <button>
+        <BiSolidEditAlt style={{ fontSize: 25, color: "darkblue" }} />
+      </button>
+      </Link>,
+      change: 
+        <button onClick={handleConfirmClick}>
+        <MdDelete style={{ fontSize: 25, color: "red" }} />
+      </button>,
     },
   ]
   return (

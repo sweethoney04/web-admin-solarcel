@@ -19,7 +19,7 @@ export default function Navbar({ children }) {
             style={{ marginTop: 20, marginLeft: 15 }}
             className="flex-none w-14 h-14"
           >
-            {/* <img style={{ width: 40 }} src={require("../assets/img/33.png")} /> */}
+            {/* <img style={{ width: 40 }} src={require("../assets/img/33.png")} /> */}  
             <div
               style={{
                 borderLeft: "1px solid",
@@ -48,7 +48,7 @@ export default function Navbar({ children }) {
             <img
               onClick={() => setOpen(!open)}
               style={{ width: 55, marginTop: 13 }}
-              src={require("../assets/img/user1.png")}
+              src={require("../assets/img/profile-user.png")}
             />
             {open && (
               <div className="bg-white p-4 w-48 shadow-lg absolute -right-0 z-50 mt-2">
@@ -58,6 +58,7 @@ export default function Navbar({ children }) {
                       onClick={() => setOpen(false)}
                       className="block p-2 text-lg cursor-pointer rounded hover:bg-blue-100"
                       key={menu}
+         
                     >
                       {menu}
                     </li>
@@ -70,8 +71,8 @@ export default function Navbar({ children }) {
             style={{ marginTop: 16, marginRight: 70 }}
             className="flex-none w-14 h-14 mr-10px"
           >
-            <h5 style={{ fontSize: 20 }}>User</h5>
-            <p style={{ fontSize: 12, color: "#D9D9D9" }}>admin</p>
+            <h5 style={{ fontSize: 20, fontWeight: 'bold' }}>User</h5>
+            <p style={{ fontSize: 12, color: "#D9D9D9", fontWeight: 'bold' }}>admin</p>
           </div>
         </div>
       </div>
