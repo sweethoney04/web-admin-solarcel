@@ -99,7 +99,7 @@ export default function ManageUser() {
       </button>,
     },
     {
-      sort: 1,
+      sort: 2,
       id: '000000',
       category: 'ແບບປ້ຳ',
       name: 'ຊຸດປ້ຳ210w',
