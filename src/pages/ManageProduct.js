@@ -68,9 +68,9 @@ export default function () {
     <>
       <div
         className="flex w-full justify-between ml-3 mr-3 mt-5"
-        style={{ fontFamily: "Noto Sans Lao" }}
+        style={{ fontFamily: "Noto Sans Lao", color: '#154391' }}
       >
-        <h4 style={{ fontSize: 24 }}>ການຈັດການປະເພດຂໍ້ມູນ</h4>
+        <h4 style={{ fontSize: 24 }}>ການຈັດການຂໍ້ມູນ</h4>
         <div class="relative inline-block text-left">
           <div onClick={toggleDropdown} style={{ marginLeft: 650 }}>
             <button

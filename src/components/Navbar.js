@@ -1,12 +1,18 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
 export default function Navbar({ children }) {
+  const [open, setOpen] = useState(false);
+  const Menu = ["Profile", "Setting", "Logout"];
   return (
     <>
       <div
         className="w-full h-20 mt-3 ml-3 mr-3"
-        style={{ borderRadius: "5px", backgroundColor: "#F0F0F0", marginRight: 15, }}
+        style={{
+          borderRadius: "5px",
+          backgroundColor: "#F0F0F0",
+          marginRight: 15,
+        }}
       >
         <div className="flex ...">
           <div
@@ -22,9 +28,7 @@ export default function Navbar({ children }) {
                 marginLeft: 60,
                 color: "#D9D9D9",
               }}
-            >
-
-            </div>
+            ></div>
           </div>
           <div className="grow h-14 ...">
             <div className="pt-2 relative mx-auto text-gray-600">
@@ -42,9 +46,25 @@ export default function Navbar({ children }) {
           </div>
           <div style={{ marginRight: 10 }} className="flex-none w-14 h-14">
             <img
+              onClick={() => setOpen(!open)}
               style={{ width: 55, marginTop: 13 }}
               src={require("../assets/img/user1.png")}
             />
+            {open && (
+              <div className="bg-white p-4 w-48 shadow-lg absolute -right-0 z-50 mt-2">
+                <ul>
+                  {Menu.map((menu) => (
+                    <li
+                      onClick={() => setOpen(false)}
+                      className="block p-2 text-lg cursor-pointer rounded hover:bg-blue-100"
+                      key={menu}
+                    >
+                      {menu}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
           <div
             style={{ marginTop: 16, marginRight: 70 }}
