@@ -7,7 +7,7 @@ export default function SideBar({ children }) {
   const gradientStyle = {
     background: "linear-gradient(to bottom, #143B8E, #01143F)",
     height: "100vh",
-    width: "50vh",
+    width: "45vh",
     borderTopRightRadius: 25,
     borderBottomRightRadius: 25,
     color: "white",
@@ -21,8 +21,9 @@ export default function SideBar({ children }) {
     display: "flex",
     alignItems: "center",
     transition: "background 0.3s ease-in-out",
-    borderTopLeftRadius: 25,
-    borderBottomLeftRadius: 25,
+    borderTopLeftRadius: 20,
+    borderBottomLeftRadius: 20,
+
   };
 
   const activeLinkStyle = {
@@ -61,11 +62,10 @@ export default function SideBar({ children }) {
           style={{
             fontSize: "20px",
             fontFamily: "Noto Sans Lao",
-            marginLeft: 0,
             marginTop: 25,
           }}
         >
-          <div style={{ marginBottom: 27 }}>
+          <div style={{ marginBottom: 27, marginLeft: -35 }}>
             <Link
               to="/"
               style={activeLink === "/" ? activeLinkStyle : linkStyle}
@@ -87,7 +87,7 @@ export default function SideBar({ children }) {
           </div>
 
           {/* ການບໍລິການ */}
-          <div style={{ marginBottom: 27 }}>
+          <div style={{ marginBottom: 27, marginLeft: -38  }}>
             <Link
               to="/service"
               style={activeLink === "/service" ? activeLinkStyle : linkStyle}
@@ -109,7 +109,7 @@ export default function SideBar({ children }) {
             </Link>
           </div>
           {/* ຈັດການຂໍ້ມູນສິນຄ້າ */}
-          <div style={{ marginBottom: 27 }}>
+          <div style={{ marginBottom: 27, marginLeft: -38 }}>
             <Link
               to="/manage-product"
               style={
@@ -134,7 +134,7 @@ export default function SideBar({ children }) {
           </div>
 
           {/* ຂໍ້ມູນປະເພດສິນຄ້າ */}
-          <div style={{ marginBottom: 27 }}>
+          <div style={{ marginBottom: 27, marginLeft: -38 }}>
             <Link
               to="/product"
               style={activeLink === "/product" ? activeLinkStyle : linkStyle}
@@ -157,7 +157,7 @@ export default function SideBar({ children }) {
           </div>
 
           {/* ຈັດການຂ່າວ */}
-          <div style={{ marginBottom: 27 }}>
+          <div style={{ marginBottom: 27, marginLeft: -38 }}>
             <Link
               to="/manage-news"
               style={
@@ -168,7 +168,7 @@ export default function SideBar({ children }) {
               }
               onMouseLeave={(e) =>
                 (e.currentTarget.style.backgroundColor =
-                  activeLink === "/product" ? "#ffffff" : "transparent")
+                  activeLink === "/manage-news" ? "#ffffff" : "transparent")
               }
               onClick={() => setActiveLink("/manage-news")}
             >
@@ -182,7 +182,7 @@ export default function SideBar({ children }) {
           </div>
 
           {/* ຈັດການຜູ້ໃຊ້ */}
-          <div style={{ marginBottom: 27 }}>
+          <div style={{ marginBottom: 27, marginLeft: -38 }}>
             <Link
               to="manage-user"
               style={
@@ -193,7 +193,7 @@ export default function SideBar({ children }) {
               }
               onMouseLeave={(e) =>
                 (e.currentTarget.style.backgroundColor =
-                  activeLink === "/product" ? "#ffffff" : "transparent")
+                  activeLink === "/manage-user" ? "#ffffff" : "transparent")
               }
               onClick={() => setActiveLink("/manage-user")}
             >

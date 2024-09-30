@@ -13,12 +13,12 @@ export default function Navbar({ children }) {
             style={{ marginTop: 20, marginLeft: 15 }}
             className="flex-none w-14 h-14"
           >
-            <img style={{ width: 40 }} src={require("../assets/img/33.png")} />
+            {/* <img style={{ width: 40 }} src={require("../assets/img/33.png")} /> */}
             <div
               style={{
                 borderLeft: "1px solid",
                 height: "80px",
-                marginTop: -60,
+                marginTop: -20,
                 marginLeft: 60,
                 color: "#D9D9D9",
               }}
@@ -32,8 +32,8 @@ export default function Navbar({ children }) {
                 Search
               </label>
               <input
-                style={{ width: "70%", marginTop: 4, marginLeft: 40 }}
-                className="border-2 border-white-300 bg-white h-14 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                style={{ width: "60%", marginTop: 4, marginLeft: 40 }}
+                className=" bg-white h-14 px-5 pr-16 rounded-lg text-sm focus:outline-none"
                 type="search"
                 name="search"
                 placeholder="Search"
